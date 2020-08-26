@@ -13,8 +13,7 @@ app.use(expressLayouts);
 
 app.get('/', async (req, res) => {
     const posts = await fetch(`http://localhost:1337/posts`)
-        .then(res => res.json())
-        .catch(err => new Error(err));
+        .then(res => res.json());
     if (posts instanceof Error) {
         res.redirect('/error');
     } else {
