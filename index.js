@@ -8,7 +8,7 @@ const port = 80;
 
 app.set('view engine', 'ejs');
 
-app.use(express.static('./views'));
+app.use(express.static('./public'));
 app.use(expressLayouts);
 
 app.get('/', (req, res) => {
