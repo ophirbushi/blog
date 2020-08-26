@@ -3,3 +3,11 @@ My Blog
 
 <%- contentFor('main') %>
 <h1>Welcome to my blog</h1>
+
+<ul>
+    <% posts.forEach(post => { %>
+    <li>
+        <a href="/blog/<%- post.id %>"><%- post.title %></a>
+    </li>
+    <% }) %>
+</ul>

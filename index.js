@@ -11,8 +11,15 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(expressLayouts);
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/', async (req, res) => {
+    const posts = await fetch(`http://localhost:1337/posts`)
+        .then(res => res.json())
+        .catch(err => new Error(err));
+    if (posts instanceof Error) {
+        res.redirect('/error');
+    } else {
+        res.render('index', { posts });
+    }
 });
 
 app.get('/blog/:blogId', async (req, res) => {
