@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"node .\" \"cd ../blog-strapi && npm start\""
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "express-ejs-layouts": "^2.5.0",
     "marked": "^1.1.1",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
   }
 }
