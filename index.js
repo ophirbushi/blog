@@ -4,6 +4,7 @@ const expressLayouts = require('express-ejs-layouts');
 const marked = require('marked');
 
 const app = express();
+const port = 80;
 
 app.set('view engine', 'ejs');
 
@@ -30,4 +31,4 @@ app.get('/error', (req, res) => {
     res.render('error');
 });
 
-app.listen(8080);
+app.listen(port, () => console.log(`listening on port ${port}`));
